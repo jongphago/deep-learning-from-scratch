@@ -11,8 +11,8 @@ void main(void) {
 	float x1, x2;
 	printf("x1값과 x2값을 입력하시오: ");
 	scanf("%f %f", &x1, &x2);
-	int orLabel = XOR(x1, x2);
-	printf("%d", orLabel);
+	int xorLabel = XOR(x1, x2);
+	printf("%d", xorLabel);
 }
 
 
