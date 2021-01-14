@@ -1,4 +1,5 @@
 import inspect
+import numpy as np
 
 def retrieve_name(var):
     """
@@ -94,3 +95,20 @@ def grad_descent(f, init_x, lr=.01, step_num=100):
     for _ in range(step_num):
         x -= lr * num_grad(f, x)
     return x
+
+def step_function(x:list)->list:
+    y = x > 0
+    return y.astype(np.int)
+
+def relu(x):
+    return np.maximum(0, x)
+
+def softmax(a):
+    c = np.max(a)
+    exp_a = np.exp(a - c)
+    exp_sum = np.sum(exp_a)
+    y = exp_a / exp_sum
+    if(y.sum().round() != 1):
+        print("softmax function ERROR")
+        return -99999999
+    return y
